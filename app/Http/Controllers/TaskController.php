@@ -54,11 +54,11 @@ class TaskController extends Controller
                 return $task;
             })
             ->editColumn('status', function ($tasks) {
-                if ($tasks->status === false) {
-                    $task = '<span class="label label-light-danger font-weight-bold label-inline">Incomplete</span>';
+                if ($tasks->status) {
+                    $task = '<span class="label label-light-success font-weight-bold label-inline">Complete</span>';
                     return $task;
                 } else {
-                    $task = '<span class="label label-light-success font-weight-bold label-inline">Complete</span>';
+                    $task = '<span class="label label-light-danger font-weight-bold label-inline">Incomplete</span>';
                     return $task;
                 }
             })
